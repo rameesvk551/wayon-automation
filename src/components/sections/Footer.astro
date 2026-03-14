@@ -1,0 +1,86 @@
+---
+const links = [
+  { 
+    title: "Product", 
+    items: [
+      { name: "Features", href: "/#features" },
+      { name: "Integrations", href: "#" },
+      { name: "Enterprise", href: "#" },
+      { name: "Solutions", href: "#" }
+    ] 
+  },
+  { 
+    title: "Company", 
+    items: [
+      { name: "About Us", href: "#" },
+      { name: "Careers", href: "#" },
+      { name: "Blog", href: "#" },
+      { name: "Contact", href: "#" }
+    ] 
+  },
+  { 
+    title: "Resources", 
+    items: [
+      { name: "Documentation", href: "#" },
+      { name: "Help Center", href: "#" },
+      { name: "API Reference", href: "#" },
+      { name: "Guides", href: "#" }
+    ] 
+  },
+  { 
+    title: "Legal", 
+    items: [
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms of Service", href: "/terms-of-service" },
+      { name: "Cookie Policy", href: "#" },
+      { name: "GDPR", href: "#" }
+    ] 
+  }
+];
+---
+<footer class="py-20 bg-white border-t border-gray-100">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 gap-12 md:grid-cols-4 lg:grid-cols-5">
+      <div class="col-span-2 lg:col-span-1">
+        <div class="flex items-center gap-2 mb-6 text-indigo-600">
+          <svg class="w-8 h-8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" /></svg>
+          <span class="text-xl font-extrabold text-gray-900 tracking-tight">Wayon</span>
+        </div>
+        <p class="text-gray-500 text-sm leading-relaxed mb-6">
+          The next generation of conversational AI for social commerce.
+        </p>
+        <div class="flex gap-4">
+          <div class="w-8 h-8 bg-gray-50 rounded-lg border border-gray-100 flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-100 cursor-pointer transition-all">
+            𝕏
+          </div>
+          <div class="w-8 h-8 bg-gray-50 rounded-lg border border-gray-100 flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-100 cursor-pointer transition-all">
+            in
+          </div>
+        </div>
+      </div>
+      
+      {links.map((group) => (
+        <div>
+          <h4 class="font-bold text-gray-900 mb-6">{group.title}</h4>
+          <ul class="space-y-4">
+            {group.items.map((item) => (
+              <li>
+                <a href={item.href} class="text-sm text-gray-500 hover:text-indigo-600 transition-colors uppercase tracking-wider font-semibold text-[10px]">
+                  {item.name}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    
+    <div class="pt-12 mt-12 border-t border-gray-100 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-xs text-gray-400">© 2026 Wayon Automation Inc. All rights reserved.</p>
+      <div class="flex gap-8">
+         <p class="text-[10px] font-bold text-gray-300">BASED IN SAN FRANCISCO</p>
+         <p class="text-[10px] font-bold text-gray-300">SOC2 CERTIFIED</p>
+      </div>
+    </div>
+  </div>
+</footer>

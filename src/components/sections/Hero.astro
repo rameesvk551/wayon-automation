@@ -1,0 +1,96 @@
+---
+---
+<section class="relative pt-20 pb-16 overflow-hidden md:pt-32 md:pb-24">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="grid items-center grid-cols-1 gap-12 lg:grid-cols-2">
+      <div>
+        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 mb-6">
+          <span class="text-xs font-semibold tracking-widest text-indigo-600 uppercase">New: Comment-to-DM Automation</span>
+        </div>
+        <h1 class="text-4xl font-extrabold tracking-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
+          Automate Instagram & <span class="text-indigo-600">WhatsApp</span> Conversations
+        </h1>
+        <p class="mt-6 text-xl text-gray-500 max-w-2xl leading-relaxed">
+          Automatically reply to messages, capture leads, and send product catalogs from Instagram and WhatsApp. Scale your sales without the manual work.
+        </p>
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+          <a href="#" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-white transition-all duration-200 bg-indigo-600 border border-transparent rounded-xl hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600 shadow-lg shadow-indigo-200">
+            Start Free Trial
+          </a>
+          <a href="#" class="inline-flex items-center justify-center px-8 py-4 text-base font-semibold text-gray-900 transition-all duration-200 bg-white border border-gray-200 rounded-xl hover:bg-gray-50 hover:border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-600">
+            Book Demo
+          </a>
+        </div>
+        <div class="mt-8 flex items-center gap-4 text-sm text-gray-500">
+          <div class="flex -space-x-2">
+            {[1, 2, 3, 4].map((i) => (
+              <div class={`w-8 h-8 rounded-full border-2 border-white bg-gray-200 flex items-center justify-center overflow-hidden`}>
+                <img src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i}`} alt="User" />
+              </div>
+            ))}
+          </div>
+          <span>Joined by 1,000+ businesses this month</span>
+        </div>
+      </div>
+
+      <div class="relative">
+        <div class="relative mx-auto w-full max-w-[400px]">
+          {/* Phone Mockup */}
+          <div class="relative bg-gray-900 rounded-[3rem] p-4 shadow-2xl border-[8px] border-gray-800">
+            <div class="absolute top-0 left-1/2 -translate-x-1/2 h-6 w-32 bg-gray-800 rounded-b-2xl z-10"></div>
+            <div class="bg-white rounded-[2rem] overflow-hidden aspect-[9/19] relative">
+              {/* Chat Interface Header */}
+              <div class="bg-white border-b border-gray-100 p-4 pt-8 flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-indigo-600 flex items-center justify-center text-white font-bold">W</div>
+                <div>
+                  <p class="font-bold text-sm text-gray-900 leading-none">Wayon Bot</p>
+                  <p class="text-[10px] text-green-500 font-medium mt-1">Online</p>
+                </div>
+              </div>
+              
+              {/* Chat Messages */}
+              <div class="p-4 space-y-4">
+                <div class="flex justify-start">
+                  <div class="bg-gray-100 rounded-2xl rounded-tl-none p-3 max-w-[80%]">
+                    <p class="text-xs text-gray-800">Hi! How can I help you today?</p>
+                  </div>
+                </div>
+                <div class="flex justify-end">
+                  <div class="bg-indigo-600 rounded-2xl rounded-tr-none p-3 max-w-[80%]">
+                    <p class="text-xs text-white">I'm interested in your product catalog.</p>
+                  </div>
+                </div>
+                <div class="flex justify-start">
+                  <div class="bg-gray-100 rounded-3xl rounded-tl-none p-3 max-w-[90%] overflow-hidden border border-gray-100 shadow-sm">
+                    <div class="aspect-square bg-gray-200 rounded-xl mb-2">
+                       <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&auto=format&fit=crop&q=60" alt="Product" class="w-full h-full object-cover rounded-xl" />
+                    </div>
+                    <p class="text-xs font-bold text-gray-900">Modern Smartwatch</p>
+                    <p class="text-[10px] text-gray-500 mt-1 line-clamp-2">Premium design with all-day battery life and health tracking.</p>
+                    <button class="mt-2 w-full py-1.5 bg-indigo-600 text-white text-[10px] font-bold rounded-lg leading-none">View Details</button>
+                  </div>
+                </div>
+              </div>
+
+              {/* Chat Input */}
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-100 flex items-center gap-2">
+                <div class="flex-1 h-10 bg-gray-50 border border-gray-200 rounded-full px-4 flex items-center">
+                  <p class="text-xs text-gray-400">Type a message...</p>
+                </div>
+                <div class="w-10 h-10 bg-indigo-600 rounded-full flex items-center justify-center">
+                  <svg class="w-5 h-5 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          {/* Decorative Elements */}
+          <div class="absolute -z-10 -top-10 -right-10 w-40 h-40 bg-indigo-100 rounded-full blur-3xl opacity-50"></div>
+          <div class="absolute -z-10 -bottom-10 -left-10 w-40 h-40 bg-orange-100 rounded-full blur-3xl opacity-50"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

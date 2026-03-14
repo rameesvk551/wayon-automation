@@ -1,0 +1,63 @@
+---
+---
+<section class="py-24 bg-white overflow-hidden">
+  <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+    <div class="grid items-center grid-cols-1 gap-16 lg:grid-cols-2">
+      <div class="relative group">
+        <div class="absolute -inset-4 bg-indigo-50/50 rounded-3xl blur-2xl group-hover:bg-indigo-100/50 transition-colors duration-500"></div>
+        <div class="relative bg-white border border-gray-100 rounded-3xl shadow-xl overflow-hidden p-8">
+          <div class="space-y-6">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-indigo-100 flex-shrink-0 flex items-center justify-center font-bold text-indigo-600">JD</div>
+              <div class="bg-gray-50 rounded-2xl p-4 flex-1">
+                <p class="text-xs text-gray-500 mb-1 font-semibold">John Doe asked:</p>
+                <p class="text-sm text-gray-800">Do you offer international shipping to Brazil? 🇧🇷</p>
+              </div>
+            </div>
+            <div class="flex flex-row-reverse items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-indigo-600 flex-shrink-0 flex items-center justify-center font-bold text-white">AI</div>
+              <div class="bg-indigo-600 text-white rounded-2xl p-4 flex-1">
+                <p class="text-xs text-indigo-200 mb-1 font-semibold">Wayon AI replied:</p>
+                <p class="text-sm">Yes, we ship to Brazil! Shipping typically takes 7-10 days. Would you like to see our shipping rates?</p>
+              </div>
+            </div>
+            <div class="flex items-start gap-4 opacity-75 grayscale-50">
+              <div class="w-10 h-10 rounded-full bg-red-100 flex-shrink-0 flex items-center justify-center font-bold text-red-600">SM</div>
+              <div class="bg-gray-50 rounded-2xl p-4 flex-1">
+                <p class="text-xs text-gray-500 mb-1 font-semibold">Sara Miller commented:</p>
+                <p class="text-sm text-gray-800">Is the summer collection available in XL?</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div>
+        <div class="inline-flex items-center px-4 py-1.5 rounded-full bg-indigo-50 border border-indigo-100 mb-6">
+          <span class="text-xs font-semibold tracking-widest text-indigo-600 uppercase">24/7 Support</span>
+        </div>
+        <h2 class="text-3xl font-extrabold text-gray-900 sm:text-4xl md:text-5xl mb-6">
+          Automate Frequently Asked Questions
+        </h2>
+        <p class="text-xl text-gray-600 leading-relaxed mb-8">
+          Stop spending hours answering the same questions over and over. Our bot automatically replies to common questions in comments, DMs, and story mentions, keeping your customers engaged instantly.
+        </p>
+        <ul class="space-y-4">
+          {[
+            "Instant answers to product inquiries",
+            "Automatic shipping & return info",
+            "Comment-to-DM conversions",
+            "Story mention engagement"
+          ].map((item) => (
+            <li class="flex items-center gap-3">
+              <div class="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center">
+                <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+              </div>
+              <span class="font-medium text-gray-700">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
