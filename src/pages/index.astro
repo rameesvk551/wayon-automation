@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Interakt - WhatsApp Business for Travel & Tourism">
+<Layout title="Wayon - WhatsApp Business Automation">
   <Fragment slot="head">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style is:global>
@@ -27,7 +27,7 @@ import Layout from '../layouts/Layout.astro';
       .lang { background: #f0f0f0; border-radius: 4px; padding: 5px 10px; font-size: 12px; color: #555; }
 
       /* HERO */
-      .hero { background: linear-gradient(135deg, #f0faf5 0%, #e6f7ef 40%, #f5f5f0 100%); padding: 60px 40px 40px; display: flex; align-items: center; gap: 20px; min-height: 420px; max-width: 100%; overflow: hidden; }
+      .hero { background: linear-gradient(135deg, #f0faf5 0%, #e6f7ef 40%, #f5f5f0 100%); padding: 60px 40px 40px; display: flex; align-items: center; gap: 20px; min-height: 420px; max-width: 100%; overflow: visible; position: relative; z-index: 2; }
       .hero-left { flex: 1; min-width: 220px; }
       .hero-left h1 { font-size: 34px; font-weight: 800; color: #0a4f3f; line-height: 1.15; margin-bottom: 22px; }
       .hero-left h1 span { color: #0a4f3f; }
@@ -234,6 +234,25 @@ import Layout from '../layouts/Layout.astro';
       .int-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
       .int-chip { background: #f5f5f5; border: 1px solid #e0e0e0; border-radius: 8px; padding: 8px 18px; font-size: 12.5px; font-weight: 600; color: #333; }
 
+      /* SECTION INTRO STYLES */
+      .section-intro { margin-bottom: 32px; }
+      .section-intro .section-badge { display: inline-flex; align-items: center; gap: 6px; background: linear-gradient(135deg, rgba(37,211,102,0.1), rgba(10,79,63,0.08)); border: 1px solid rgba(37,211,102,0.25); color: #0a4f3f; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px; padding: 6px 16px; border-radius: 50px; margin-bottom: 14px; }
+      .section-intro .section-badge::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #25d366; animation: badgePulse 2s ease-in-out infinite; }
+      @keyframes badgePulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.5; transform: scale(0.7); } }
+      .section-intro h2 { font-size: 28px; font-weight: 800; color: #1a1a1a; line-height: 1.25; margin-bottom: 14px; }
+      .section-intro h2 .accent { color: #0a4f3f; }
+      .section-intro h2 .highlight { background: linear-gradient(135deg, #25d366, #0a4f3f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+      .section-intro .section-desc { font-size: 14.5px; color: #555; line-height: 1.75; max-width: 560px; }
+      .section-intro .section-desc strong { color: #1a1a1a; font-weight: 600; }
+      .section-intro .section-desc .metric { display: inline-flex; align-items: center; gap: 4px; background: rgba(37,211,102,0.1); color: #0a4f3f; font-weight: 700; padding: 2px 10px; border-radius: 20px; font-size: 13px; }
+      .section-intro-center { text-align: center; display: flex; flex-direction: column; align-items: center; }
+      .section-intro-center .section-desc { max-width: 680px; }
+
+      /* Phone flow section intro */
+      .phone-flow-intro { text-align: center; max-width: 700px; margin: 0 auto 30px; padding: 0 20px; }
+      .phone-flow-intro h3 { font-size: 20px; font-weight: 700; color: #1a1a1a; margin-bottom: 10px; }
+      .phone-flow-intro p { font-size: 13.5px; color: #666; line-height: 1.7; }
+
       /* CTA BOTTOM */
       .cta-bottom { background: linear-gradient(135deg, #e8f5ee 0%, #f5fbf7 100%); padding: 52px 80px; display: flex; align-items: center; gap: 60px; }
       .cta-left { flex: 1; }
@@ -380,6 +399,9 @@ import Layout from '../layouts/Layout.astro';
         .steps { grid-template-columns: 1fr; gap: 40px; }
         .steps::before { display: none; }
         
+        /* Hide complex bridging SVGs on mobile since phones stack vertically */
+        .branch-connectors { display: none !important; }
+        
         .stats { flex-direction: column; gap: 30px; padding: 40px 20px; }
         .stat-div { width: 80px; height: 1px; }
         
@@ -401,45 +423,32 @@ import Layout from '../layouts/Layout.astro';
     </style>
   </Fragment>
 
-  <!-- TOP BAR -->
-  <div class="topbar">
-    Never miss a call with MyCallGenie: India's #1 AI Call Receptionist — <a href="#">Learn More</a>
-  </div>
 
   <!-- NAV -->
   <nav>
-    <div class="nav-logo">
-      <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="#25d366"/><path d="M7 20l1.5-5.5A7 7 0 1 1 14 21a7 7 0 0 1-3.5-.94L7 20z" fill="#fff"/></svg>
-      interakt
+    <div class="nav-logo" style="text-transform: uppercase; letter-spacing: 0.5px;">
+      <svg viewBox="0 0 28 28" fill="none"><circle cx="14" cy="14" r="14" fill="#0a4f3f"/><path d="M7 20l1.5-5.5A7 7 0 1 1 14 21a7 7 0 0 1-3.5-.94L7 20z" fill="#fff"/></svg>
+      Wayon
     </div>
-    <div class="nav-links">
-      <a href="#">Products ▾</a>
-      <a href="#">Solutions ▾</a>
-      <a href="#">Integrations</a>
-      <a href="#">Pricing</a>
-      <a href="#">Partnerships</a>
-      <a href="#">Resources ▾</a>
-    </div>
-    <div class="nav-right">
-      <span class="btn-demo">Demo</span>
-      <span class="btn-login">Login</span>
-      <span class="lang">🌐 EN ▾</span>
-    </div>
+
+
   </nav>
 
   <!-- HERO -->
   <section class="hero">
     <div class="hero-left">
-      <h1>Generate more leads for<br>your travel agency on<br>WhatsApp</h1>
-      <ul class="hero-bullets">
-        <li>Enable 24/7 customer support and agent availability</li>
-        <li>Automate FAQs around travel and tourism queries</li>
-        <li>Share relevant documents, PDFs, property brochures on WhatsApp</li>
-      </ul>
-      <div class="hero-btns">
-        <a href="#" class="btn-green">Try Interakt for Free</a>
-        <a href="#" class="btn-outline">Get a Live Demo</a>
+      <div style="display: inline-flex; align-items: center; gap: 6px; background: rgba(37,211,102,0.12); border: 1px solid rgba(37,211,102,0.3); padding: 5px 14px; border-radius: 50px; font-size: 11px; font-weight: 700; color: #0a4f3f; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px;">
+        <span style="width: 6px; height: 6px; border-radius: 50%; background: #25d366;"></span>
+        #1 WhatsApp CRM for Travel Agencies
       </div>
+      <h1>Stop losing leads.<br><span style="background: linear-gradient(135deg, #25d366, #0a4f3f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Start closing deals</span><br>on WhatsApp.</h1>
+      <p style="font-size: 15px; color: #555; line-height: 1.7; margin-bottom: 22px; max-width: 460px;">The all-in-one platform that turns your WhatsApp into a <strong style="color: #1a1a1a;">24/7 sales machine</strong>. Automate inquiries, showcase packages, capture leads, and close bookings — all from the app your customers already love.</p>
+      <ul class="hero-bullets">
+        <li><strong>Automate 80%</strong> of repetitive travel queries instantly</li>
+        <li>Convert <strong>3x more leads</strong> with intelligent chatbot follow-ups</li>
+        <li>Share brochures, itineraries & catalogs right inside WhatsApp</li>
+      </ul>
+
     </div>
     <div class="hero-center">
       <div class="phone-device">
@@ -463,7 +472,33 @@ import Layout from '../layouts/Layout.astro';
 
 
   <!-- FEATURE 1: LEAD GEN -->
-  <section class="feature" style="justify-content: center; padding: 40px 40px;">
+  <section class="feature" style="justify-content: center; padding: 0 40px 40px; flex-direction: column;">
+    
+    <div class="phone-flow-intro">
+      <div class="section-intro section-intro-center">
+        <span class="section-badge">Conversational Commerce</span>
+        <h3 style="font-size: 22px; font-weight: 800; color: #1a1a1a; margin-bottom: 10px;">Your Customers Browse, Enquire & Book — <span class="highlight">All Inside WhatsApp</span></h3>
+        <p style="font-size: 13.5px; color: #666; line-height: 1.7;">No apps to download. No websites to navigate. Your travel packages, property listings, and custom trip planners are delivered as a rich, interactive WhatsApp experience that feels effortless.</p>
+      </div>
+    </div>
+
+    <!-- SVG Branching Arrows from Hero to Phones -->
+    <div class="branch-connectors" style="width: 100%; max-width: 900px; height: 80px; margin-top: -10px; position: relative; z-index: 10;">
+      <svg width="100%" height="100%" viewBox="0 0 1000 100" preserveAspectRatio="none">
+        <!-- Left line (to View Packages) -->
+        <path d="M 500 0 C 500 50, 150 50, 150 95" fill="none" stroke="#25d366" stroke-width="2.5" stroke-dasharray="6,4" />
+        <polygon points="144,90 156,90 150,100" fill="#25d366" />
+        
+        <!-- Middle line (to Custom Trip) -->
+        <path d="M 500 0 L 500 95" fill="none" stroke="#25d366" stroke-width="2.5" stroke-dasharray="6,4" />
+        <polygon points="494,90 506,90 500,100" fill="#25d366" />
+        
+        <!-- Right line (to View Properties) -->
+        <path d="M 500 0 C 500 50, 850 50, 850 95" fill="none" stroke="#25d366" stroke-width="2.5" stroke-dasharray="6,4" />
+        <polygon points="844,90 856,90 850,100" fill="#25d366" />
+      </svg>
+    </div>
+
     <div class="feature-img" style="width: 100%;">
       <div class="phone-flow">
 
@@ -477,11 +512,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
         </div>
-        <!-- Arrow 2 -->
-        <div class="flow-arrow">
-          <div class="flow-arrow-line"></div>
-          <div class="flow-arrow-label">Lead Created</div>
-        </div>
+
         <!-- Phone 3 -->
         <div class="phone-device">
           <div class="phone-device-body">
@@ -492,11 +523,7 @@ import Layout from '../layouts/Layout.astro';
             </div>
           </div>
         </div>
-        <!-- Arrow 3 -->
-        <div class="flow-arrow">
-          <div class="flow-arrow-line"></div>
-          <div class="flow-arrow-label">Booking</div>
-        </div>
+
         <!-- Phone 4 -->
         <div class="phone-device">
           <div class="phone-device-body">
@@ -506,11 +533,6 @@ import Layout from '../layouts/Layout.astro';
               <div class="phone-device-reflection"></div>
             </div>
           </div>
-        </div>
-        <!-- Arrow 4 -->
-        <div class="flow-arrow">
-          <div class="flow-arrow-line"></div>
-          <div class="flow-arrow-label">Confirmation</div>
         </div>
         <!-- Phone 5 -->
         <div class="phone-device">
@@ -529,17 +551,22 @@ import Layout from '../layouts/Layout.astro';
   <!-- FEATURE 2: QUALIFY LEADS -->
   <section class="feature alt">
     <div class="feature-text">
-      <h2>Qualify leads on WhatsApp for timely follow-ups based on their travel requirements</h2>
+      <div class="section-intro">
+        <span class="section-badge">Smart Lead Qualification</span>
+        <h2>Never miss a hot lead again. <span class="accent">Qualify automatically</span> while you sleep.</h2>
+        <p class="section-desc">Your WhatsApp chatbot asks the right questions — budget, destination, travel dates, group size — and <strong>scores every lead instantly</strong>. Wake up to a pipeline full of qualified prospects, ready for your agents to close. No manual sorting. No guesswork.</p>
+      </div>
       <ul>
-        <li>Use WhatsApp chatbots to request more information like budget, destination, number of travelers and more</li>
-        <li>Integrate with CRM to store customer data and assign the right travel agents</li>
-        <li>Send WhatsApp broadcasts to promote new packages and deals based on query</li>
-        <li>Automate FAQs to answer travel queries</li>
+        <li>Smart chatbots collect budget, destination & traveler details automatically</li>
+        <li>Leads auto-sync to your CRM and get assigned to the perfect agent</li>
+        <li>Broadcast exclusive deals to warm leads based on their travel interests</li>
+        <li>Instant FAQ automation handles 80% of queries without human effort</li>
       </ul>
-      <a href="#" class="btn-try">Try for Free</a>
+      <a href="#" class="btn-try">Start Qualifying Leads →</a>
     </div>
-    <div class="feature-img" style="flex: 1.5;">
-      <div class="mac-window">
+    <div class="feature-img" style="flex: 1.5; position: relative; display: flex; flex-direction: column; align-items: flex-end;">
+      <!-- Main Lead Listing -->
+      <div class="mac-window" style="width: 95%; box-shadow: 0 15px 40px rgba(0,0,0,0.1);">
         <div class="mac-header">
           <div class="mac-dot r"></div>
           <div class="mac-dot y"></div>
@@ -547,14 +574,27 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <img src="/leadlisting.png" alt="Lead Listing Dashboard" style="width: 100%; display: block; object-fit: cover;" />
       </div>
+      
+      <!-- Overlapping Lead Details (Left-aligned) -->
+      <div class="mac-window" style="margin-top: -100px; align-self: flex-start; z-index: 2; width: 85%; box-shadow: 0 30px 80px rgba(0,0,0,0.25);">
+        <div class="mac-header">
+          <div class="mac-dot r"></div>
+          <div class="mac-dot y"></div>
+          <div class="mac-dot g"></div>
+        </div>
+        <img src="/lead-details.png" alt="Lead Details Window" style="width: 100%; display: block;" />
+      </div>
     </div>
   </section>
 
   <!-- CAMPAIGN MANAGEMENT SECTION -->
   <section class="feature" style="flex-direction: column; align-items: center; padding: 70px 40px; background: #fdfdfd;">
     <div class="feature-text" style="text-align: center; margin-bottom: 50px; max-width: 800px;">
-      <h2 style="font-size: 28px; margin-bottom: 16px;">Drive Revenue with Smart Campaign Management</h2>
-      <p style="color: #555; font-size: 14.5px; line-height: 1.6;">Create highly personalized WhatsApp campaigns, preview your interactive messages in real-time, and launch broadcasts that convert your leads into bookings.</p>
+      <div class="section-intro section-intro-center">
+        <span class="section-badge">Campaign Engine</span>
+        <h2 style="font-size: 28px; margin-bottom: 16px;">One broadcast. <span class="highlight">Thousands of bookings.</span></h2>
+        <p class="section-desc" style="max-width: 680px; margin: 0 auto;">Imagine launching a "Maldives Summer Sale" campaign at 10 AM and watching <span class="metric">📈 47 new inquiries</span> flood in by lunch. With Wayon's campaign builder, you design stunning WhatsApp messages with carousels, CTAs & images — preview them in real-time — and broadcast to your entire lead database with one click.</p>
+      </div>
     </div>
     <div class="feature-img" style="width: 100%;">
       <div style="display: flex; align-items: center; justify-content: center; gap: 40px; flex-wrap: wrap;">
@@ -628,14 +668,18 @@ import Layout from '../layouts/Layout.astro';
   <!-- FEATURE 4: PROPERTY & PACKAGE MANAGEMENT -->
   <section class="feature alt" style="background: #f4fbf7;">
     <div class="feature-text">
-      <h2>Effortless Property &amp; Package Management</h2>
+      <div class="section-intro">
+        <span class="section-badge">Inventory Hub</span>
+        <h2>Your entire travel catalog — <span class="accent">organized, updated & sellable</span> in seconds.</h2>
+        <p class="section-desc">Stop juggling spreadsheets and outdated PDFs. Wayon gives you a <strong>single command center</strong> for every property, every package, every price change. Update a Dubai villa listing at 3 PM — and it's instantly available on your WhatsApp catalog by 3:01 PM.</p>
+      </div>
       <ul>
-        <li>Manage all your travel packages and properties from a single, intuitive dashboard</li>
-        <li>Update pricing, availability, and itineraries in real-time</li>
-        <li>Sync your custom packages directly to WhatsApp catalogs for easy customer browsing</li>
-        <li>Keep your agents and customers on the same page with centralized package details</li>
+        <li>One dashboard for all packages, properties, pricing & availability</li>
+        <li>Real-time sync — edit once, update everywhere automatically</li>
+        <li>WhatsApp catalog integration lets customers browse & inquire instantly</li>
+        <li>Your agents always have the latest details — zero miscommunication</li>
       </ul>
-      <a href="#" class="btn-try">Try for Free</a>
+      <a href="#" class="btn-try">Organize Your Catalog →</a>
     </div>
     <div class="feature-img" style="flex: 1.8; display: flex; flex-direction: column; padding: 20px 0;">
       
@@ -661,14 +705,18 @@ import Layout from '../layouts/Layout.astro';
   <!-- FEATURE 5: ITINERARY CREATION -->
   <section class="feature">
     <div class="feature-text">
-      <h2>Craft Stunning Itineraries Instantly</h2>
+      <div class="section-intro">
+        <span class="section-badge">Itinerary Builder</span>
+        <h2>Create itineraries so beautiful, your clients <span class="accent">screenshot and share them</span>.</h2>
+        <p class="section-desc">Gone are the days of boring Word documents. Build <strong>magazine-quality, day-by-day itineraries</strong> in minutes — complete with hotel photos, activity breakdowns, and travel timelines. Send them directly on WhatsApp and watch your clients say <em>"Wow, this looks amazing!"</em></p>
+      </div>
       <ul>
-        <li>Generate personalized, day-by-day itineraries with just a few clicks</li>
-        <li>Present activities, hotel details, and travel logic in a beautiful format</li>
-        <li>Share itineraries seamlessly directly on WhatsApp</li>
-        <li>Delight your customers with clear, professional, and exciting travel plans</li>
+        <li>Drag-and-drop builder creates day-by-day plans in minutes, not hours</li>
+        <li>Gorgeous formatting with hotel photos, activities & travel notes</li>
+        <li>One-tap WhatsApp sharing — clients get it instantly</li>
+        <li>Professional presentations that win trust and close deals faster</li>
       </ul>
-      <a href="#" class="btn-try">Try for Free</a>
+      <a href="#" class="btn-try">Build Your First Itinerary →</a>
     </div>
     <div class="feature-img" style="flex: 1.5;">
       <div class="mac-window" style="width: 100%; max-width: 800px; box-shadow: 0 25px 70px rgba(0,0,0,0.15);">
@@ -683,14 +731,18 @@ import Layout from '../layouts/Layout.astro';
   <!-- FEATURE 6: CUSTOMER MANAGEMENT -->
   <section class="feature alt" style="background: #fdfdfd;">
     <div class="feature-text">
-      <h2>Comprehensive Customer Management</h2>
+      <div class="section-intro">
+        <span class="section-badge">Customer Intelligence</span>
+        <h2>Know your travelers better than <span class="accent">they know themselves</span>.</h2>
+        <p class="section-desc">Every interaction, every preference, every past trip — all in one place. When a customer messages you, your agent already knows they love <strong>beach resorts, travel in March, and prefer 4-star hotels</strong>. That's not magic — that's Wayon's Customer Intelligence.</p>
+      </div>
       <ul>
-        <li>Keep track of all your leads and existing customers in one unified list</li>
-        <li>Access deep insights with detailed customer profiles and travel histories</li>
-        <li>Manage interactions, preferences, and custom tags effortlessly</li>
-        <li>Build stronger relationships with a 360-degree view of your travelers</li>
+        <li>Unified customer database — leads, active clients & past travelers in one view</li>
+        <li>Rich profiles with travel history, preferences & interaction timeline</li>
+        <li>Smart tags and segments for hyper-targeted campaigns</li>
+        <li>360° customer view that makes every conversation personal</li>
       </ul>
-      <a href="#" class="btn-try">Try for Free</a>
+      <a href="#" class="btn-try">Meet Your Customers Better →</a>
     </div>
     <div class="feature-img" style="flex: 1.8; display: flex; flex-direction: column; padding: 20px 0;">
       <!-- Customer List (Top Right) -->
@@ -714,14 +766,18 @@ import Layout from '../layouts/Layout.astro';
   <!-- FEATURE 7: BOOKING MANAGEMENT -->
   <section class="feature" style="background: #f4fbf7;">
     <div class="feature-text">
-      <h2>Streamlined Booking Management</h2>
+      <div class="section-intro">
+        <span class="section-badge">Booking Command Center</span>
+        <h2>From "I'm interested" to "I'm packed" — <span class="accent">zero bookings fall through the cracks</span>.</h2>
+        <p class="section-desc">Every quote, every payment, every travel date — tracked, automated, and visible at a glance. Wayon sends <strong>payment reminders, booking confirmations, and pre-trip details</strong> automatically via WhatsApp. Your customers feel taken care of. Your team feels in control.</p>
+      </div>
       <ul>
-        <li>Centralize all your travel reservations, quotes, and confirmed bookings</li>
-        <li>Track payment statuses, travel dates, and fulfillment stages easily</li>
-        <li>Automate confirmation messages and payment reminders via WhatsApp</li>
-        <li>Ensure a seamless, drop-off-free experience from inquiry to trip completion</li>
+        <li>Every reservation, quote & confirmed booking in one live dashboard</li>
+        <li>Real-time payment tracking with automated WhatsApp reminders</li>
+        <li>Auto-send booking confirmations, e-tickets & travel documents</li>
+        <li>Zero drop-offs — every inquiry is guided to a completed booking</li>
       </ul>
-      <a href="#" class="btn-try">Try for Free</a>
+      <a href="#" class="btn-try">Streamline Your Bookings →</a>
     </div>
     <div class="feature-img" style="flex: 1.5;">
       <div class="mac-window" style="width: 100%; max-width: 800px; box-shadow: 0 25px 70px rgba(0,0,0,0.15);">
@@ -733,64 +789,23 @@ import Layout from '../layouts/Layout.astro';
     </div>
   </section>
 
-
-
-  <!-- GET STARTED -->
-  <div class="get-started">
-    <h2>Get Started with Interakt Today</h2>
-    <div class="get-started-tags">
-      <span class="gs-tag">Engage &amp; Re-engage Prospects</span>
-      <span class="gs-tag">Drive Sales</span>
-      <span class="gs-tag">Deliver higher CSAT</span>
-      <span class="gs-tag">Support at Scale</span>
+  <!-- WHY CHOOSE US -->
+  <section class="why">
+    <div class="why-left">
+      <div class="section-intro" style="margin-bottom: 24px;">
+        <span class="section-badge">All-In-One Platform</span>
+        <h2 style="font-size: 32px; font-weight: 800; color: #1a1a1a; margin-bottom: 16px;">Built to <span class="highlight">Attract Clients</span> & Scale Fast</h2>
+        <p class="section-desc">Stop jumping between tools. Wayon replaces your scattered spreadsheets and standalone tools with one unified ecosystem designed exclusively for ambitious travel agencies.</p>
+      </div>
+      <ul class="why-list">
+        <li><strong>Managing client profiles,</strong> trip details and booking information in one system</li>
+        <li><strong>Creating and organizing</strong> travel itineraries more efficiently</li>
+        <li><strong>Tracking leads</strong> and follow-ups with built-in automation</li>
+        <li><strong>Handling payments</strong> and invoices alongside booking details</li>
+        <li><strong>Communicating with clients</strong> through multiple channels from the same dashboard</li>
+      </ul>
     </div>
-    <a href="#" class="btn-white">Try Interakt for Free</a>
-  </div>
-
-  <!-- FOOTER -->
-  <footer>
-    <div class="footer-grid">
-      <div>
-        <div class="footer-logo">inter<span>akt</span></div>
-        <p class="footer-desc">WhatsApp Business API platform helping businesses engage and sell better.</p>
-        <div class="footer-social">
-          <span class="social-icon">f</span>
-          <span class="social-icon">in</span>
-          <span class="social-icon">🐦</span>
-          <span class="social-icon">▶</span>
-        </div>
-      </div>
-      <div class="footer-col">
-        <h4>Interakt</h4>
-        <a href="#">Get a Live Demo</a>
-        <a href="#">About Us</a>
-        <a href="#">Partner with Us</a>
-        <a href="#">Interakt Academy</a>
-        <a href="#">FAQ's</a>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <a href="#">Case Studies</a>
-        <a href="#">Resource Center</a>
-        <a href="#">Notifications Library</a>
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms &amp; Conditions</a>
-      </div>
-      <div class="footer-col">
-        <h4>Why Interakt</h4>
-        <a href="#">Interakt vs. Aisensy</a>
-        <a href="#">Interakt vs. Bitespeed</a>
-        <a href="#">Interakt vs. Delightchat</a>
-        <a href="#">Interakt vs. Business</a>
-        <a href="#">Interakt vs. Wati</a>
-        <a href="#">Interakt vs. Gupshup</a>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div class="footer-regions">India | Singapore | Indonesia | Brazil | UAE | Philippines | Africa</div>
-      <p>Copyright © Jio Haptik Technologies Limited 2025. All rights reserved.</p>
-    </div>
-  </footer>
+  </section>
 
   <!-- PDF DOWNLOAD BUTTON -->
   <button id="downloadPdfBtn" class="btn-green" style="position: fixed; bottom: 24px; right: 24px; z-index: 9999; box-shadow: 0 10px 30px rgba(0,0,0,0.25); border-radius: 50px; padding: 14px 28px; cursor: pointer; display: flex; align-items: center; gap: 8px;">
